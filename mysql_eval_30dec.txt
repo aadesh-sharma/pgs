@@ -21,7 +21,7 @@
 // DELIMITER $$
  CREATE FUNCTION category_path (id INT , title VARCHAR(250), path VARCHAR(250)))
  RETURNS VARCHAR(250)
- NON DETERMINISTIC
+ NOT DETERMINISTIC
  BEGIN
     SELECT id, title, title as path
     FROM parent
@@ -40,7 +40,7 @@ SELECT * FROM category_path ORDER BY path;
 // DELIMITER $$
  CREATE FUNCTION category_path (id INT , title VARCHAR(250), lvl INT))
  RETURNS INT
- NON DETERMINISTIC
+ NOT DETERMINISTIC
  BEGIN
      SELECT id, title, 0 lvl
      FROM parent
